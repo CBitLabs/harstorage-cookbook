@@ -1,0 +1,21 @@
+---
+driver:
+  name: vagrant
+
+provisioner:
+  name: chef_solo
+
+platforms:
+  - name: ubuntu-12.04
+  - name: ubuntu-14.04
+
+suites:
+  - name: default
+    run_list:
+      - recipe[harstorage::default]
+      - recipe[harstorage::mongo]
+      - recipe[harstorage::install]
+    attributes:
+      harstorage:
+        browsermob:
+          source: 'https://s3.amazonaws.com/com.bitsighttech.ops.public.artifacts/browsermob_proxy.deb'

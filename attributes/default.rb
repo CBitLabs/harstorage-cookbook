@@ -19,9 +19,9 @@ default['harstorage']['code-directory'] = '/var/www/harstorage'
 default['harstorage']['egg-source'] = 'https://code.google.com/p/harstorage/downloads/detail?name=harstorage-1.0-py2.7.egg&can=2&q='
 default['harstorage']['source-repository'] = 'https://github.com/pavel-paulau/harstorage.git'
 default['harstorage']['virtualenv-directory'] = '/var/virtualenvs/harstorage'
-default['harstorage']['virtualenv-activate'] = "#{File.join(node['harstorage']['virtualenv-directory'], '/bin/activate')}"
-default['harstorage']['virtualenv-python'] = "#{File.join(node['harstorage']['virtualenv-directory'], '/bin/python2.7')}"
-default['harstorage']['virtualenv-pip'] = "#{File.join(node['harstorage']['virtualenv-directory'], '/bin/pip')}"
+default['harstorage']['virtualenv-activate'] = File.join(node['harstorage']['virtualenv-directory'], '/bin/activate')
+default['harstorage']['virtualenv-python'] = File.join(node['harstorage']['virtualenv-directory'], '/bin/python2.7')
+default['harstorage']['virtualenv-pip'] = File.join(node['harstorage']['virtualenv-directory'], '/bin/pip')
 default['harstorage']['virtualenvhelper'] = '/var/virtualenvhelper.sh' 
 default['harstorage']['ini'] = '/etc/harstorage.ini'
 default['harstorage']['logfile'] = '/var/log/harstorage.log'

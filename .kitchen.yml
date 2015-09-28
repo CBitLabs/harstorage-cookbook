@@ -1,6 +1,6 @@
 ---
 driver:
-  name: vagrant
+  name: docker
 
 provisioner:
   name: chef_solo
@@ -12,10 +12,19 @@ platforms:
 suites:
   - name: default
     run_list:
-      - recipe[harstorage::default]
       - recipe[harstorage::mongo]
       - recipe[harstorage::install]
     attributes:
       harstorage:
         browsermob:
-          source: 'https://s3.amazonaws.com/com.bitsighttech.ops.public.artifacts/browsermob_proxy.deb'
+          source: 'https://s3.amazonaws.com/uploads.hipchat.com/32081/488539/K4v89viOcJrKfTM/browsermob_proxy.deb'
+  - name: browsermob
+    run_list:
+      - recipe[harstorage::default]
+      - recipe[harstorage::browsermob]
+    attributes:
+      harstorage:
+        browsermob:
+          source: 'https://s3.amazonaws.com/uploads.hipchat.com/32081/488539/K4v89viOcJrKfTM/browsermob_proxy.deb'
+    excludes:
+      - ubuntu-14.04

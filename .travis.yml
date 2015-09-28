@@ -1,0 +1,21 @@
+language: generic
+
+sudo: false
+
+env:
+  global:
+  - PATH="/opt/chefdk/bin:/opt/chef/bin:$PATH"
+
+addons:
+  apt:
+    sources:
+    - chef-stable-precise
+    packages:
+    - chefdk
+
+install:
+  - chef gem install kitchen-docker
+
+script:
+  - chef exec foodcritic .
+  - chef exec rubocop

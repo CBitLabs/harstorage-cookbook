@@ -15,10 +15,10 @@ node['harstorage']['mongo']['packages'].each do |pkg|
 end
 
 directory node['harstorage']['mongo']['data-directory'] do
-   owner 'mongodb'
-   recursive true
-   mode '0755'
-   action :create
+  owner 'mongodb'
+  recursive true
+  mode '0755'
+  action :create
 end
 
 template 'mongod conf' do

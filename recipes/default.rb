@@ -3,7 +3,7 @@
 # Recipe:: default
 #
 # Copyright (C) 2015 BitSight Technologies
-# 
+#
 # All rights reserved - Do Not Redistribute
 #
 

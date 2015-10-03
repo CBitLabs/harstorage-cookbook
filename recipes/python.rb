@@ -1,10 +1,8 @@
-#Sets up python, virtual environment and pip dependencies
+# Sets up python, virtual environment and pip dependencies
 
 include_recipe 'python'
-# Creates location for virtualenv if it doesn't exist
-# Ex: /usr/local/bitsight doesn't exist b/c bs-base 
-# not run on the node
 
+# Creates location for virtualenv if it doesn't exist
 venv_base = ::File.expand_path('..', node['harstorage']['virtualenv-directory'])
 directory venv_base do
   recursive true
@@ -26,7 +24,7 @@ python_pip 'setuptools' do
   group  node['harstorage']['owner']
 end
 
-node['harstorage']['pips'].each do |pp, ver| 
+node['harstorage']['pips'].each do |pp, ver|
   python_pip pp do
     virtualenv node['harstorage']['virtualenv-directory']
     version ver

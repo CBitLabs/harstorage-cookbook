@@ -1,0 +1,11 @@
+# 120 Line length because we all <3 pixels
+Metrics/LineLength:
+  Max: 120
+
+# Allows multi-space formatting to line-up args
+Style/SingleSpaceBeforeFirstArg:
+  Enabled: false
+
+# Allows word arrays, because 'why' 'do' 'this'
+Style/PercentLiteralDelimiters:
+  Enabled: false
